@@ -1,0 +1,83 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "ignoreFiles": ["node_modules/**/*.scss", "**/_normalize.scss"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+
+    "color-hex-case": "lower",
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+
+    "selector-type-no-unknown": [true],
+    "selector-pseudo-element-no-unknown": [true, { "ignorePseudoElements": ["ng-deep"] }],
+
+    "font-family-name-quotes": "always-unless-keyword",
+    "font-weight-notation": "named-where-possible",
+
+    "number-no-trailing-zeros": true,
+
+    "string-no-newline": true,
+    "string-quotes": "single",
+
+    "length-zero-no-unit": true,
+
+    "time-min-milliseconds": 0,
+
+    "unit-case": "lower",
+    "unit-no-unknown": true,
+
+    "value-keyword-case": "lower",
+    "value-no-vendor-prefix": true,
+
+    "value-list-comma-newline-after": "always-multi-line",
+
+    "shorthand-property-no-redundant-values": true,
+
+    "property-case": "lower",
+    "property-no-unknown": true,
+    "property-no-vendor-prefix": true,
+
+    "declaration-bang-space-after": "never",
+    "declaration-bang-space-before": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-no-important": null,
+
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-newline-before": "never-multi-line",
+    "declaration-block-semicolon-space-after": "never-single-line",
+    "declaration-block-semicolon-space-before": "never",
+    "declaration-block-trailing-semicolon": "always",
+
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "block-no-empty": true,
+    "block-opening-brace-newline-after": "always-multi-line",
+    "block-opening-brace-newline-before": "never-single-line",
+    "block-opening-brace-space-after": "never-single-line",
+    "block-opening-brace-space-before": "always",
+
+    "scss/no-duplicate-dollar-variables": true,
+    "scss/at-import-partial-extension-blacklist": ["scss"],
+    "scss/at-mixin-argumentless-call-parentheses": "always",
+    "scss/at-mixin-named-arguments": "always",
+    "scss/at-mixin-parentheses-space-before": "never",
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-colon-newline-after": "always-multi-line",
+    "scss/dollar-variable-colon-space-after": "always",
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/dollar-variable-no-missing-interpolation": true,
+    "scss/double-slash-comment-empty-line-before": "never",
+    "scss/double-slash-comment-inline": "never",
+    "scss/double-slash-comment-whitespace-inside": "always",
+    "scss/declaration-nested-properties": "never",
+    "scss/operator-no-newline-after": true,
+    "scss/operator-no-newline-before": true,
+    "scss/operator-no-unspaced": true,
+    "scss/selector-no-redundant-nesting-selector": true
+  }
+}

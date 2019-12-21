@@ -1,0 +1,44 @@
+@import '../../../scss/forms';
+@import '../../../scss/variables';
+
+.topics-list {
+  border: px solid $greyish;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  overflow: auto;
+  overflow-x: hidden;
+  width: 250px;
+}
+.topics-container {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 300px;
+  input {
+    width: 250px;
+  }
+  button {
+    width: 50px;
+  }
+  form {
+    align-items: center;
+    display: inherit;
+    flex-direction: column;
+  }
+}
+
+h2 {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  font-family: 'OpenSans', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 15px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}

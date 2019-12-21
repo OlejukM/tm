@@ -1,0 +1,20 @@
+<div class="header">
+  <h1>{{ title }} vacancy</h1>
+  <form novalidate (ngSubmit)="onSubmit(vacancy)" [formGroup]="vacancy">
+    <button mat-flat-button color="primary" class="save-button" [disabled]="vacancy.invalid" type="submit">SAVE</button>
+  </form>
+</div>
+
+<div class="vacancy-create-container">
+  <div class="component-container">
+    <tm-manage-vacancy-form></tm-manage-vacancy-form>
+  </div>
+  <div cdkDropListGroup class="cdkGroup">
+    <div class="component-container">
+      <tm-task-questions></tm-task-questions>
+    </div>
+    <div class="component-container questions">
+      <tm-library-questions></tm-library-questions>
+    </div>
+  </div>
+</div>

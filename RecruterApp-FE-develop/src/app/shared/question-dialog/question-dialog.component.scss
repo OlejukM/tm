@@ -1,0 +1,43 @@
+@import '../../../scss/variables';
+@import '../../../scss/forms';
+@import '../../../scss/utility';
+@import '../../../scss/popup';
+
+.typeLengthShell {
+  display: flex;
+  justify-content: space-between;
+  width: 416px;
+}
+
+.input-title {
+  height: 36px;
+}
+
+.input-topics {
+  height: 52px;
+}
+
+.input-maxlength {
+  height: 36px;
+  margin-top: 5px;
+  width: 120px;
+}
+
+button {
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: $white;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  margin-top: 40px;
+  width: 96px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}

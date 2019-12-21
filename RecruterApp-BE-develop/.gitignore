@@ -1,0 +1,13 @@
+# IDE - VSCode
+.vscode
+.idea
+
+# dependencies
+node_modules
+
+.DS_Store
+environment.dev.js
+.env
+
+**/logfile.log
+

@@ -1,0 +1,52 @@
+@import '../../../scss/variables';
+@import '../../../scss/forms';
+@import '../../../scss/utility';
+@import '../../../scss/popup';
+
+.invite-candidate-container {
+  background-color: $white;
+  display: grid;
+  grid-template-rows: 95px 1fr;
+  height: 500px;
+  width: 500px;
+}
+
+.header {
+  background-color: $white-three;
+  border-bottom: 1px solid $white-four;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  width: inherit;
+}
+
+.close-popup {
+  padding: 10px;
+}
+
+.text-container {
+  align-items: center;
+  display: flex;
+}
+
+.content {
+  padding: 20px 40px;
+
+  p {
+    font-size: 15px;
+  }
+}
+
+.invite-form {
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+
+  button {
+    font-weight: bold;
+    width: 90px;
+  }
+}

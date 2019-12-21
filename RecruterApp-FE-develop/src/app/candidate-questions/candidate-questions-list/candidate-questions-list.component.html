@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Questions list</h1>
+  <table mat-table [dataSource]="dataSource$ | async" class="mat-elevation-z8">
+    <!-- Text Column -->
+    <ng-container matColumnDef="text">
+      <th mat-header-cell *matHeaderCellDef>QUESTION</th>
+      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef class="th-width">TYPE</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="d-flex">
+          <div class="type">
+            <mat-icon
+              *ngIf="element && element.type"
+              [svgIcon]="TYPE_OF_ICON[element.type]"
+              class="type-icon"
+              [ngStyle]="{ 'background-color': BACKGROUND_COLOR_ICON[element.type] }"
+            ></mat-icon>
+          </div>
+          {{ element.type }}
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef class="th-width">STATUS</th>
+      <td mat-cell *matCellDef="let element" class="text-bold">
+        <mat-icon [svgIcon]="QUESTIONS_STATUS[element.status]"></mat-icon>
+        <span class="question-status">{{ element.status | uppercase }}</span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let element; columns: displayedColumns"
+      class="table-body-tr"
+      (click)="openDialog(element)"
+      [ngClass]="{ disabled: element.status === 'locked' }"
+    ></tr>
+  </table>
+</div>

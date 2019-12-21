@@ -1,0 +1,11 @@
+<div class="statistic-bar-item">
+  <div class="container">
+    <p>{{ statistic.title }}</p>
+    <span class="number-style">
+      {{ statistic.number }}
+    </span>
+  </div>
+  <button mat-flat-button color="primary" *ngIf="statistic.action" routerLink="vacancies/create">
+    {{ statistic.action }}
+  </button>
+</div>

@@ -1,0 +1,54 @@
+<div class="library-questions-forms-header">
+  <h4>Filter setting</h4>
+</div>
+<div class="library-questions-forms-body">
+  <form [formGroup]="filterForm">
+    <div class="filter-settings-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title" placeholder="Type text" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select name="type" id="type" formControlName="type">
+          <option value="">Select question type</option>
+          <option value="code">Code</option>
+          <option value="text">Text</option>
+          <option value="video">Video</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="topics">Topics</label>
+        <mat-form-field class="tm-form-field-filter-topics example-chip-list" [floatLabel]="'never'">
+          <mat-placeholder class="placeholder">Type text</mat-placeholder>
+          <mat-chip-list #chipList contentEditable="true">
+            <mat-chip
+              *ngFor="let vacancy of topicsList"
+              [selectable]="autocompleteConfig.selectable"
+              [removable]="autocompleteConfig.removable"
+              (removed)="remove(vacancy)"
+            >
+              {{ vacancy }}
+              <mat-icon matChipRemove *ngIf="autocompleteConfig.removable" svgIcon="baseline-cancel"></mat-icon>
+            </mat-chip>
+            <input
+              id="topics"
+              #vacancyInput
+              [formControl]="topics"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputAddOnBlur]="autocompleteConfig.addOnBlur"
+              (matChipInputTokenEnd)="add($event)"
+              (click)="filterVacancies()"
+            />
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let topicName of (filteredTopics | async)" [value]="topicName">
+              {{ topicName }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

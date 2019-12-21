@@ -1,0 +1,5 @@
+<div class="statistic-bar-container">
+  <tm-statistic-bar-item *ngIf="activeVacancies" [statistic]="activeVacancies"></tm-statistic-bar-item>
+  <tm-statistic-bar-item *ngIf="needReview" [statistic]="needReview"></tm-statistic-bar-item>
+  <tm-statistic-bar-item *ngIf="bestScoreToday" [statistic]="bestScoreToday"></tm-statistic-bar-item>
+</div>

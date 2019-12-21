@@ -1,0 +1,40 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/utility';
+
+.status-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100px;
+}
+
+.text-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.active {
+  color: $ruby;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.status {
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 25px;
+}
+
+.status-button {
+  background-color: $white;
+  border: 2px $dark-aquamarine solid;
+  color: $dark-aquamarine;
+  font-weight: bold;
+}
+
+.button-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

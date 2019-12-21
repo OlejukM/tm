@@ -1,0 +1,26 @@
+<form [formGroup]="vacancy">
+  <div class="filter-settings-form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" placeholder="Title" autocomplete="off" cdkFocusInitial />
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select name="type" id="type" formControlName="type">
+        <option value="" disabled selected>Select vacancy type</option>
+        <option value="{{ type }}" *ngFor="let type of types">{{ type }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea type="text" id="description" placeholder="Description" formControlName="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input type="url" id="link" placeholder="Link" formControlName="link" />
+    </div>
+    <div class="form-group">
+      <mat-checkbox id="status" type="checkbox" formControlName="status">Open immediatily</mat-checkbox>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,49 @@
+<div class="task-questions-container">
+  <div class="header">
+    <h4>Task questions({{ taskQuestions.length }})</h4>
+  </div>
+  <div class="questions-list-container">
+    <ul
+      class="task-questions"
+      cdkDropList
+      id="y"
+      [cdkDropListData]="taskQuestions"
+      cdkDropListConnectedTo="x"
+      (cdkDropListDropped)="drop($event)"
+      class="questions-list"
+    >
+      <li *ngFor="let question of taskQuestions" (blur)="totalTime()" cdkDrag>
+        <div class="control-container">
+          <span>
+            <mat-icon svgIcon="baseline-delete" class="edit-icon" (click)="onDelete(question)"></mat-icon>
+          </span>
+          <div class="example-handle" cdkDragHandle>
+            <mat-icon svgIcon="baseline-drag_handle"></mat-icon>
+          </div>
+        </div>
+        <div class="question-content">
+          <div class="title">
+            <h5>{{ question.title }}</h5>
+            <span>{{ question.duration }}</span>
+          </div>
+          <div class="topics">
+            <div class="type">
+              <mat-icon
+                [svgIcon]="TYPE_OF_ICON[question.type]"
+                class="type-icon"
+                [ngStyle]="{ 'background-color': BACKGROUND_COLOR_ICON[question.type] }"
+              ></mat-icon>
+            </div>
+            <span *ngFor="let query of question.topics">
+              {{ query }}
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="total-time">
+    <h4>TOTAL TIME</h4>
+    <h4 class="min">{{ totalMin }} MIN</h4>
+  </div>
+</div>

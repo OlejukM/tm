@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="home-container">
+    <div class="logo-container">
+      <img src="../../assets/logo.svg" class="tm-logo-colored" />
+    </div>
+    <div class="recruiter-app-container">
+      <p class="label">Recruiter App</p>
+    </div>
+    <div class="sign-in-form">
+      <div class="candidate-auth" *ngIf="candidate">
+        <div class="candidate-text-container">
+          <p>Enter verification code</p>
+          <form novalidate [formGroup]="verification" class="verification-form">
+            <div class="form-group">
+              <input
+                type="code"
+                id="code"
+                formControlName="code"
+                placeholder=""
+                autocomplete="off"
+                class="code-input"
+                dkFocusInitial
+              />
+            </div>
+            <button
+              mat-flat-button
+              color="primary"
+              type="submit"
+              (click)="send(verification)"
+              class="send-button"
+              [disabled]="verification.invalid"
+            >
+              SEND
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="sign-in-container" *ngIf="!candidate">
+        <div class="text-container">
+          <p class="authorize">Authorize with your <span class="ruby">@techmagic.co</span> email</p>
+        </div>
+        <div class="button-container">
+          <tm-google-signin></tm-google-signin>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

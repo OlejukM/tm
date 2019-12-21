@@ -1,0 +1,33 @@
+@import './scss/material-theme';
+@import './scss/variables';
+@import './scss/normalize';
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,800,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background-color: $background;
+  font-family: 'Raleway', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 1024px;
+}
+
+body [class^='mat-'],
+body [class*=' mat-'] {
+  font-family: 'Raleway', sans-serif;
+}
+
+body [class*='mat-dialog-container'] {
+  border-radius: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+}

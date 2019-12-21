@@ -1,0 +1,22 @@
+<div class="information-bar-item">
+  <div class="about-questions">
+    <div class="information-bar-item-title">
+      <p>{{ data.title }}</p>
+    </div>
+    <div class="information-bar-item-data">
+      <p class="data">{{ data.info }}</p>
+    </div>
+  </div>
+  <div class="submit">
+    <button
+      mat-flat-button
+      color="primary"
+      *ngIf="data.title === 'Completed questions'"
+      class="submit-btn"
+      [disabled]="!(canSubmitQuestions$ | async)"
+      (click)="submitApplication()"
+    >
+      SUBMIT
+    </button>
+  </div>
+</div>

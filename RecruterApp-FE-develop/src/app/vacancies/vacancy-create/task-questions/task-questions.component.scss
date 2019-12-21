@@ -1,0 +1,38 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/utility';
+@import '../../../../scss/fields';
+@import './../../../../scss/drag';
+@import '../shared//question';
+
+::-webkit-scrollbar {
+  display: none;
+}
+.task-questions-container {
+  display: grid;
+  grid-template-rows: 48px 1fr 62px;
+  height: 650px;
+}
+.header {
+  h4 {
+    padding: 14px;
+  }
+}
+
+.min {
+  color: $ruby;
+}
+.total-time {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.total-time h4 {
+  font-size: 14px;
+  padding: 15px;
+}
+.list {
+  height: 540px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

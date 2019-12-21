@@ -1,0 +1,14 @@
+<div class="topics-container">
+  <h2>{{ mode }}</h2>
+  <mat-list role="list" class="topics-list">
+    <mat-list-item role="listitem" *ngFor="let item of (data$ | async)">{{ item }}</mat-list-item>
+  </mat-list>
+  <form novalidate [formGroup]="topicsForm" class="topics-form">
+    <div class="form-group">
+      <input type="text" id="topicTitle" formControlName="topicTitle" autocomplete="off" cdkFocusInitial />
+    </div>
+    <button mat-flat-button color="primary" type="submit" (click)="addTopic(topicsForm)">
+      ADD
+    </button>
+  </form>
+</div>

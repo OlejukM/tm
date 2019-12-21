@@ -1,0 +1,107 @@
+<div class="popup">
+  <div class="form-header">
+    <h1>{{ dialogTitle }}</h1>
+    <div class="close">
+      <button mat-dialog-close class="close-popup">
+        <mat-icon svgIcon="baseline-close" class="mat-icon-close"></mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="container-popup">
+    <form [formGroup]="manageQuestionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          cdkFocusInitial
+          formControlName="title"
+          class="form-control input-title"
+          placeholder="Type text"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Description-->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          formControlName="description"
+          class="textarea-description"
+          placeholder="Type text"
+        ></textarea>
+      </div>
+
+      <!--Topics-->
+      <div class="form-group">
+        <label for="topics">Topics</label>
+        <mat-form-field class="tm-form-field-filter-topics example-chip-list" [floatLabel]="'never'">
+          <mat-placeholder class="placeholder">Type text</mat-placeholder>
+          <mat-chip-list #chipList contentEditable="true">
+            <mat-chip
+              *ngFor="let vacancy of vacancies"
+              [selectable]="autocompleteConfig.selectable"
+              [removable]="autocompleteConfig.removable"
+              (removed)="remove(vacancy)"
+            >
+              {{ vacancy }}
+              <mat-icon matChipRemove *ngIf="autocompleteConfig.removable" svgIcon="baseline-cancel"></mat-icon>
+            </mat-chip>
+            <input
+              id="topics"
+              #vacancyInput
+              [formControl]="topicsCtrl"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputAddOnBlur]="autocompleteConfig.addOnBlur"
+              (matChipInputTokenEnd)="add($event)"
+            />
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let vacancy of (filteredTopics$ | async)" [value]="vacancy">
+              {{ vacancy }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div class="typeLengthShell">
+        <!--Type-->
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select name="type" id="type" formControlName="type">
+            <option value="" disabled selected hidden>Select question type</option>
+            <option value="code">Code</option>
+            <option value="text">Text</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+
+        <!--Max Length-->
+        <div class="form-group">
+          <label for="duration">Max length</label>
+          <input
+            type="number"
+            id="duration"
+            formControlName="duration"
+            class="form-control input-maxlength"
+            placeholder="0 h oo min"
+          />
+        </div>
+      </div>
+      <div class="button-container">
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          (click)="manageQuestion()"
+          mat-dialog-close
+          [disabled]="!manageQuestionForm.valid"
+        >
+          {{ dialogButton }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

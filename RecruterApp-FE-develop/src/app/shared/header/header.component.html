@@ -1,0 +1,27 @@
+<header>
+  <div class="wrapper">
+    <nav class="navbar-header">
+      <div class="navbar-header-links">
+        <a routerLink="/">
+          <mat-icon svgIcon="baseline-logo" class="logo"></mat-icon>
+        </a>
+      </div>
+      <div routerLinkActive="navbar-header-link-active" class="navbar-header-links">
+        <a class="menu-link" routerLink="/vacancies" *ngIf="(userRole$ | async) !== 'candidate'">Vacancies</a>
+      </div>
+      <div routerLinkActive="navbar-header-link-active" class="navbar-header-links">
+        <a class="menu-link" routerLink="/questions" *ngIf="(userRole$ | async) !== 'candidate'">Questions</a>
+      </div>
+      <div routerLinkActive="navbar-header-link-active" class="navbar-header-links">
+        <a class="menu-link" routerLink="/system-settings" *ngIf="(userRole$ | async) === 'admin'">System Settings</a>
+      </div>
+      <div class="flex-spacer"></div>
+      <div class="header-profile" [matMenuTriggerFor]="menu">
+        <img src="../../../assets/tm-header-user-picture.svg" alt="user-picture" class="header-user-logo" />
+      </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logOut()">Log out</button>
+      </mat-menu>
+    </nav>
+  </div>
+</header>

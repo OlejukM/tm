@@ -1,0 +1,168 @@
+@import './variables';
+
+.form-header {
+  background-color: $background;
+  box-sizing: border-box;
+  display: flex;
+  height: 95px;
+  justify-content: space-between;
+  padding: 25px;
+  width: 496px;
+
+  h1 {
+    font-size: 24px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-left: 15px;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+label {
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-left: 8px;
+}
+
+input {
+  background-color: $white;
+  border: solid 2px $white-two;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 36px;
+  margin: 5px 0 18px;
+  padding-left: 9px;
+  width: 416px;
+}
+
+textarea {
+  background-color: $white;
+  border: solid 2px $white-two;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 144px;
+  margin: 5px 0 18px;
+  padding: 8px 0 0 9px;
+  resize: none;
+  width: 416px;
+}
+
+select {
+  background-color: $white;
+  border: solid 2px $white-two;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: $placeholder;
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: 36px;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+  margin-top: 5px;
+  width: 286px;
+}
+
+.mat-flat-button[disabled][disabled] {
+  background-color: $dark-aquamarine;
+  color: $white;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: normal;
+  opacity: 0.5;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid $ruby;
+}
+
+.error-border {
+  border: 1px solid $ruby;
+}
+
+textarea.ng-invalid.ng-touched {
+  border: 1px solid $ruby;
+}
+
+.placeholder {
+  color: $placeholder;
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.mat-form-field {
+  margin-bottom: 18px;
+}
+
+.tm-form-field,
+.tm-form-field-filter-topics {
+  ::ng-deep.mat-form-field-wrapper {
+    border: 2px solid $input-border;
+    box-sizing: border-box;
+    height: auto;
+    margin-top: 4px;
+    min-height: 52px;
+    width: 416px;
+  }
+
+  ::ng-deep.mat-form-field-underline {
+    display: none;
+  }
+
+  ::ng-deep.mat-form-field-label {
+    box-sizing: border-box;
+    padding-left: 9px;
+  }
+
+  ::ng-deep.mat-form-field-infix {
+    margin-top: -10px;
+  }
+}
+
+::ng-deep.mat-expansion-panel-header {
+  padding-left: 40px;
+}
+
+.question-description {
+  ::ng-deep.mat-expansion-panel-header {
+    font-weight: bold;
+    padding: 0 40px;
+  }
+
+  ::ng-deep.mat-expansion-panel-body {
+    padding: 0 40px 16px;
+  }
+
+  ::ng-deep.mat-expansion-panel:not([class*='mat-elevation-z']) {
+    box-shadow: none;
+  }
+}
+
+input.mat-chip-input {
+  border: none;
+}

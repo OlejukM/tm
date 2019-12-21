@@ -1,0 +1,65 @@
+@import '../../scss/variables';
+@import '../../scss/utility';
+
+h1 {
+  font-size: 24px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: normal;
+  line-height: normal;
+  margin: 0 0 20px 25px;
+}
+
+.table-body-arrow-forward {
+  display: none;
+  position: absolute;
+  right: 34px;
+}
+
+.mat-icon-arrow-forward {
+  height: 15px;
+  width: 15px;
+}
+
+.table-body-tr {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dark-aquamarine-hover;
+
+    .table-body-arrow-forward {
+      display: inline;
+    }
+  }
+}
+
+.table-body-td-reviewer {
+  position: relative;
+}
+
+.th-width {
+  width: 150px;
+}
+
+.table-footer-tr {
+  cursor: pointer;
+  height: 60px;
+  text-align: center;
+}
+
+.table-footer-td {
+  background-color: $white;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  color: $dark-aquamarine;
+  font-size: 14px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: normal;
+
+  &:hover {
+    background-color: $dark-aquamarine-hover;
+  }
+}

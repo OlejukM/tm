@@ -1,0 +1,141 @@
+@import '../../scss/variables';
+@import '../../scss/forms';
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.home-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 684px;
+  justify-content: center;
+  width: 684px;
+}
+
+.sign-in-form {
+  background-color: #ffffff;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  display: flex;
+  height: 180px;
+  justify-content: center;
+  width: 684px;
+}
+
+.recruiter-app-container {
+  display: flex;
+  height: 77px;
+  justify-content: center;
+  width: 684px;
+}
+
+.label {
+  color: $dark-aquamarine;
+  font-size: 32px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 800;
+  height: 37px;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.tm-logo-colored {
+  height: 52px;
+  object-fit: contain;
+  width: 65px;
+}
+
+.info-container {
+  align-items: flex-end;
+  display: flex;
+  height: 30px;
+  width: 160px;
+}
+
+.logo-container {
+  height: 75px;
+}
+
+.tech-magic {
+  color: $greyish;
+  font-size: 11px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  height: 15px;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  width: inherit;
+}
+
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  justify-content: center;
+  width: 308px;
+}
+
+.text-container {
+  height: 42px;
+  width: inherit;
+}
+
+.button-container {
+  align-items: center;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  width: inherit;
+}
+
+.authorize {
+  color: $dark;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  height: 22px;
+  letter-spacing: normal;
+  line-height: normal;
+  width: 308px;
+}
+
+.ruby {
+  color: $ruby;
+}
+
+.candidate-text-container {
+  margin-top: 20px;
+
+  p {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}
+
+.verification-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.send-button {
+  font-weight: bold;
+  height: 36px;
+  width: 100px;
+}
+
+.code-input {
+  padding: 0;
+  text-align: center;
+  width: 100px;
+}

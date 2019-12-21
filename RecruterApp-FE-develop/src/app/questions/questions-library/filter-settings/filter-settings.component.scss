@@ -1,0 +1,19 @@
+@import '../../../../scss/fields';
+@import '../../../../scss/forms';
+
+.filter-settings-form {
+  padding: 20px 20px 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+}
+
+.tm-form-field-filter-topics {
+  ::ng-deep.mat-form-field-wrapper {
+    min-height: 144px;
+    width: 100%;
+  }
+}

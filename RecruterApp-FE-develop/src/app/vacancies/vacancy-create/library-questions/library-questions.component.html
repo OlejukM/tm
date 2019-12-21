@@ -1,0 +1,82 @@
+<div class="header">
+  <div class="search-container" *ngIf="searchQuestions">
+    <form [formGroup]="searchForm">
+      <div class="form-group">
+        <input
+          class="search-input"
+          type="text"
+          id="title"
+          formControlName="title"
+          placeholder="Search"
+          autocomplete="off"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="search-questions" *ngIf="!searchQuestions">
+    <h4>Library questions</h4>
+    <mat-icon class="search-button" [svgIcon]="'baseline-search'" (click)="search()"></mat-icon>
+  </div>
+  <div class="add-question">
+    <mat-icon class="add-button" [svgIcon]="'baseline-add'" (click)="addQuestion()"></mat-icon>
+  </div>
+</div>
+<div class="library-questions-forms-header">
+  <div class="questions-count">
+    <h5>QUESTIONS</h5>
+  </div>
+  <div class="time-min">
+    <h6>TIME (MINUTES)</h6>
+    <button class="sort-arrow" (click)="sort()">
+      <mat-icon [svgIcon]="this.arrowDirectionIcon" class="sort-arrow-icon"></mat-icon>
+    </button>
+  </div>
+</div>
+<div class="list-container">
+  <ul
+    [ngClass]="{ 'ul-height': checkLength() }"
+    class="questions-list"
+    cdkDropList
+    [cdkDropListData]="listOfQuestions"
+    cdkDropListConnectedTo="y"
+    id="x"
+    (cdkDropListDropped)="drop($event)"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [scrollWindow]="false"
+    (scrolled)="loadMore()"
+  >
+    <li *ngFor="let question of listOfQuestions" cdkDrag>
+      <div class="control-container">
+        <span *ngIf="question.author.id === (currentUserId$ | async) || (currentUserRole$ | async) === 'admin'">
+          <mat-icon svgIcon="baseline-edit" class="edit-icon" (click)="onEdit(question)"></mat-icon>
+        </span>
+        <div class="example-handle" cdkDragHandle>
+          <mat-icon svgIcon="baseline-drag_handle"></mat-icon>
+        </div>
+      </div>
+      <div class="question-content">
+        <div class="title">
+          <h5>{{ question.title }}</h5>
+          <span>{{ question.duration }}</span>
+        </div>
+        <div class="topics">
+          <div class="type">
+            <mat-icon
+              [svgIcon]="TYPE_OF_ICON[question.type]"
+              class="type-icon"
+              [ngStyle]="{ 'background-color': BACKGROUND_COLOR_ICON[question.type] }"
+            ></mat-icon>
+          </div>
+          <span *ngFor="let query of question.topics">
+            {{ query }}
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="save-button" *ngIf="checkButton()" (click)="loadMore()">
+    <h4>LOAD MORE</h4>
+  </div>
+</div>

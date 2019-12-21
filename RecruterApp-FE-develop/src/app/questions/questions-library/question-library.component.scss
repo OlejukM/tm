@@ -1,0 +1,13 @@
+@import '../../../scss/variables';
+@import '../../../scss/utility';
+
+button {
+  font-weight: 600;
+  width: 135px;
+}
+
+.questions-library-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 2fr;
+}

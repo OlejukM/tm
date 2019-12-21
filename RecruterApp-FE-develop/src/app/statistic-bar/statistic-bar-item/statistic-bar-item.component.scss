@@ -1,0 +1,58 @@
+@import '../../../scss/variables';
+
+.statistic-bar-item {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.05), 0 4px 25px 0 rgba(0, 184, 178, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  font-size: 15px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  height: 90px;
+  justify-content: space-between;
+  letter-spacing: normal;
+  line-height: normal;
+  padding: 25px;
+  width: 350px;
+
+  button {
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    height: 40px;
+    letter-spacing: 0.5px;
+    line-height: normal;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-style {
+  color: $ruby;
+  font-family: 'Nexa', serif;
+  font-size: 24px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+@media (max-width: 1440px) {
+  .statistic-bar-item {
+    display: block;
+    height: 130px;
+    text-align: center;
+    width: 240px;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+}

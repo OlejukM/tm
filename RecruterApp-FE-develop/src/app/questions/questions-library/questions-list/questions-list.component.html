@@ -1,0 +1,52 @@
+<div class="library-questions-forms-header">
+  <div class="questions-count">
+    <h4>Questions({{ totalQuestions$ | async }})</h4>
+  </div>
+  <div class="time-min">
+    <h6>TIME (MINUTES)</h6>
+    <button class="sort-arrow" (click)="sort()">
+      <mat-icon [svgIcon]="this.arrowDirectionIcon" class="sort-arrow-icon"></mat-icon>
+    </button>
+  </div>
+</div>
+<div class="library-questions-forms-body">
+  <ul class="questions-list">
+    <li *ngFor="let question of (listOfQuestions$ | async)">
+      <div class="title">
+        <h5>{{ question.title }}</h5>
+        <span>{{ question.duration }}</span>
+      </div>
+      <div class="topics">
+        <div class="type">
+          <mat-icon
+            [svgIcon]="TYPE_OF_ICON[question.type]"
+            class="type-icon"
+            [ngStyle]="{ 'background-color': BACKGROUND_COLOR_ICON[question.type] }"
+          ></mat-icon>
+        </div>
+        <span *ngFor="let query of question.topics">
+          {{ query }}
+        </span>
+      </div>
+      <div class="description-container">
+        <div class="description">
+          <p>
+            {{ question.description }}
+          </p>
+        </div>
+        <span *ngIf="question.author.id === (currentUserId$ | async) || (currentUserRole$ | async) === 'admin'">
+          <mat-icon svgIcon="baseline-edit" class="edit-icon" (click)="onEdit(question)"></mat-icon>
+        </span>
+      </div>
+    </li>
+  </ul>
+  <!-- Infinite Scroll-->
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="50"
+    [infiniteScrollContainer]="scrollerSelector"
+    [fromRoot]="true"
+    (scrolled)="onScrollDown()"
+  ></div>
+</div>
